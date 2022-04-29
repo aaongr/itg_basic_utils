@@ -13,3 +13,8 @@ ios/Runner/GeneratedPluginRegistrant.*
 res
 lib/generated
 node_modules
+
+# ITG additions
+
+.notes
+.DS_Store

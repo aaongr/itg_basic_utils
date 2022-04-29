@@ -27,15 +27,111 @@ void main() {
   });
 
   test('Test isNullOrEmpty', () {
-    expect(StringUtils.isNullOrEmpty(''), true);
     expect(StringUtils.isNullOrEmpty(null), true);
+    expect(StringUtils.isNullOrEmpty('null'), true);
+    expect(StringUtils.isNullOrEmpty(' null'), true);
+    expect(StringUtils.isNullOrEmpty('null '), true);
+    expect(StringUtils.isNullOrEmpty(' null '), true);
+    expect(StringUtils.isNullOrEmpty('Null'), true);
+    expect(StringUtils.isNullOrEmpty(' Null'), true);
+    expect(StringUtils.isNullOrEmpty('NULL'), true);
+    expect(StringUtils.isNullOrEmpty('NULL '), true);
+    expect(StringUtils.isNullOrEmpty(''), true);
     expect(StringUtils.isNullOrEmpty('Hello'), false);
   });
 
   test('Test isNotNullOrEmpty', () {
-    expect(StringUtils.isNotNullOrEmpty(''), false);
     expect(StringUtils.isNotNullOrEmpty(null), false);
+    expect(StringUtils.isNotNullOrEmpty('null'), false);
+    expect(StringUtils.isNotNullOrEmpty(' null'), false);
+    expect(StringUtils.isNotNullOrEmpty('null '), false);
+    expect(StringUtils.isNotNullOrEmpty(' null '), false);
+    expect(StringUtils.isNotNullOrEmpty('Null'), false);
+    expect(StringUtils.isNotNullOrEmpty(' Null'), false);
+    expect(StringUtils.isNotNullOrEmpty('NULL'), false);
+    expect(StringUtils.isNotNullOrEmpty('NULL '), false);
+    expect(StringUtils.isNotNullOrEmpty(''), false);
     expect(StringUtils.isNotNullOrEmpty('Hello'), true);
+  });
+
+  test('Test isNullOrEmptyOrBlank', () {
+    expect(StringUtils.isNullOrEmptyOrBlank(null), true);
+    expect(StringUtils.isNullOrEmptyOrBlank('null'), true);
+    expect(StringUtils.isNullOrEmptyOrBlank(' null'), true);
+    expect(StringUtils.isNullOrEmptyOrBlank('null '), true);
+    expect(StringUtils.isNullOrEmptyOrBlank(' null '), true);
+    expect(StringUtils.isNullOrEmptyOrBlank('Null'), true);
+    expect(StringUtils.isNullOrEmptyOrBlank(' Null'), true);
+    expect(StringUtils.isNullOrEmptyOrBlank('NULL'), true);
+    expect(StringUtils.isNullOrEmptyOrBlank('NULL '), true);
+    expect(StringUtils.isNullOrEmptyOrBlank(''), true);
+    expect(StringUtils.isNullOrEmptyOrBlank(' '), true);
+    expect(StringUtils.isNullOrEmptyOrBlank('    '), true);
+    expect(StringUtils.isNullOrEmptyOrBlank('Hello'), false);
+  });
+
+  test('Test isNotNullOrEmptyOrBlank', () {
+    expect(StringUtils.isNotNullOrEmptyOrBlank(null), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank('null'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank(' null'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank('null '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank(' null '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank('Null'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank(' Null'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank('NULL'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank('NULL '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank(''), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank(' '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank('    '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlank('Hello'), true);
+  });
+
+  test('Test isNullOrEmptyOrBlankOrZero', () {
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero(null), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('null'), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero(' null'), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('null '), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero(' null '), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('Null'), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero(' Null'), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('NULL'), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('NULL '), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero(''), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero(' '), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('    '), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('0'), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('0.0'), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero(' 0'), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero(' 0.0'), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('0 '), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('0.0 '), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero(' 0 '), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero(' 0.0 '), true);
+    expect(StringUtils.isNullOrEmptyOrBlankOrZero('Hello'), false);
+  });
+
+  test('Test isNotNullOrEmptyOrBlankOrZero', () {
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero(null), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('null'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero(' null'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('null '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero(' null '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('Null'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero(' Null'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('NULL'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('NULL '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero(''), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero(' '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('    '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('0'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('0.0'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero(' 0'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero(' 0.0'), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('0 '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('0.0 '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero(' 0 '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero(' 0.0 '), false);
+    expect(StringUtils.isNotNullOrEmptyOrBlankOrZero('Hello'), true);
   });
 
   test('Test isAscii', () {

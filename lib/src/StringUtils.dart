@@ -18,12 +18,37 @@ class StringUtils {
   /// Checks if the given String [s] is null or empty
   ///
   static bool isNullOrEmpty(String? s) =>
-      (s == null || s.isEmpty) ? true : false;
+      (s == null || s.isEmpty || s.trim().toLowerCase() == 'null') ? true : false;
 
   ///
   /// Checks if the given String [s] is not null or empty
   ///
   static bool isNotNullOrEmpty(String? s) => !isNullOrEmpty(s);
+
+  ///
+  /// Checks if the given String [s] is null or empty or blank
+  /// One string is blank when contain only empty spaces
+  ///
+  static bool isNullOrEmptyOrBlank(String? s) => isNullOrEmpty(s?.trim());
+
+  ///
+  /// Checks if the given String [s] is not null or empty or blank
+  /// One string is blank when contain only empty spaces
+  ///
+  static bool isNotNullOrEmptyOrBlank(String? s) => !isNullOrEmptyOrBlank(s);
+
+  ///
+  /// Checks if the given String [s] is null or empty or blank or zero
+  /// One string is blank when contain only empty spaces
+  ///
+  static bool isNullOrEmptyOrBlankOrZero(String? s) =>
+      isNullOrEmptyOrBlank(s?.trim()) || ['0', '0.0'].contains(s?.trim());
+
+  ///
+  /// Checks if the given String [s] is not null or empty or blank or zero
+  /// One string is blank when contain only empty spaces
+  ///
+  static bool isNotNullOrEmptyOrBlankOrZero(String? s) => !isNullOrEmptyOrBlankOrZero(s);
 
   ///
   /// Transfers the given String [s] from camcelCase to upperCaseUnderscore
